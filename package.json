@@ -1,0 +1,35 @@
+{
+  "name": "focus-micro-system",
+  "version": "1.0.0",
+  "description": "5-minute focus companion for distracted developers - CLI tool with timer, progress bar and micro-interactions",
+  "main": "index.js",
+  "bin": {
+    "focus": "./dist/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cli-progress": "^3.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galilea-g19/focus-micro-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/galilea-g19/focus-micro-system/issues"
+  },
+  "homepage": "https://github.com/galilea-g19/focus-micro-system#readme"
+}
