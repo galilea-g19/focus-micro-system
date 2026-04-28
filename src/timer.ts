@@ -4,7 +4,7 @@ const { SingleBar } = cliProgress;
 import chalk from "chalk";
 import { getMessageForMinute } from "./messages.js";
 
-// Formatea segundos a mm:ss
+// Format the seconds to mm:ss
 function formatTime(seconds: number): string {
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
@@ -21,7 +21,7 @@ export async function startTimer(
     let currentMinute = 0;
     let bar: cliProgress.SingleBar | null = null;
 
-    // Barra de progreso (solo si se pide y no está en modo quiet)
+    // Progress bar (if request it and if not quiet mode)
     if (options.showProgress && !options.quiet) {
       bar = new cliProgress.SingleBar({
         format: `${chalk.green(" Progreso")} |${chalk.cyan("{bar}")}| {percentage}% | {value}/{total} s`,
@@ -38,13 +38,13 @@ export async function startTimer(
       if (isCancelled) return;
 
       remaining--;
-      const elapsed = seconds - remaining; // tiempo transcurrido
+      const elapsed = seconds - remaining;
       const minute = Math.floor(elapsed / 60);
 
       // Actualizar barra
       if (bar) bar.update(elapsed);
 
-      // Mostrar mensaje motivacional cada minuto (excepto minuto 0)
+      // Show motivational message every minute (except minute 0)
       if (
         !options.quiet &&
         minute > currentMinute &&
@@ -53,30 +53,29 @@ export async function startTimer(
       ) {
         currentMinute = minute;
         const msg = getMessageForMinute(minute, options.task);
-        // Salto de línea limpio sin romper la barra
+        // Line break without broke bar
         console.log(`\n ${pink(msg)}`);
-        // No es necesario reescribir la barra; 'cli-progress' la mantiene en la línea anterior
       }
 
-      // Mostrar tiempo restante (opcional, útil si no hay barra o en modo quiet)
+      // Show remaining time
       if (!options.showProgress || options.quiet) {
         const remainingFormatted = formatTime(remaining);
         process.stdout.write(`\r⏱ Tiempo restante: ${remainingFormatted}   `);
       }
 
-      // Finalización
+      // Ending
       if (remaining === 0) {
         clearInterval(interval);
         if (bar) bar.stop();
         if (!options.quiet) {
           console.log(chalk.green("\n¡Tiempo completado!"));
-          process.stdout.write("\x07"); // Beep (solo si terminal lo soporta)
+          process.stdout.write("\x07"); // Beep (only if terminal support it)
         }
         resolve(true);
       }
     }, 1000);
 
-    // Capturar tecla para cancelar (solo en terminal interactiva)
+    // Capture the key to cancel ( only on interactive terminal)
     if (process.stdin.isTTY) {
       process.stdin.setRawMode(true);
       process.stdin.resume();

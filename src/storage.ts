@@ -18,7 +18,7 @@ export function saveSession(
     durationMinutes,
     completed,
   });
-  // Guardar solo las últimas 50 sesiones
+  // Save the last 50 sessions
   const trimmed = history.slice(-50);
   fs.writeFileSync(HISTORY_FILE, JSON.stringify(trimmed, null, 2));
 }
