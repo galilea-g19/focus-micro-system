@@ -7,7 +7,7 @@ import chalk from "chalk";
 import * as process from "process";
 
 program
-  .version("1.0.1")
+  .version("1.0.2")
   .description("Focus Micro-System - 5 minutos de enfoque antes de trabajar")
   .option("-m, --minutes <number>", "Duración en minutos", "5")
   .option(
@@ -16,6 +16,11 @@ program
   )
   .option("-q, --quiet", "Modo silencio (sin mensajes motivaciones)", false)
   .option("--no-progress", "Ocultar barra de progreso", false)
+  .option(
+    "-c, --color <color>",
+    "Color de mensajes: pink, mint, orange, lavende",
+    "pink",
+  )
   .helpOption("-h, --help");
 
 program.parse(process.argv);
@@ -44,7 +49,7 @@ async function main() {
 
   console.log(
     chalk.green(
-      `\n Enfócate en: "${task}" durante ${durationMinutes} minutos. `,
+      `\nEnfócate en: "${task}" durante ${durationMinutes} minutos. `,
     ),
   );
   console.log(chalk.gray(`Presiona cualquier tecla para cancelar.. \n`));
@@ -53,6 +58,7 @@ async function main() {
     task: task,
     quiet: options.quiet || false,
     showProgress: options.progress !== false,
+    color: options.color,
   });
 
   if (success) {

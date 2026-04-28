@@ -25,6 +25,9 @@ focus --task "Revisar PRs"   # sin pregunta
 focus --quiet                # solo tiempo restante, sin mensajes
 focus --no-progress          # texto, sin barra
 focus --help                 # ayuda
+
+# Ejemplo
+node dist/index.js --minutes 1 --task "Probar colores" --color mint
 ```
 
 ### Full commands

@@ -11,9 +11,29 @@ function formatTime(seconds: number): string {
   return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
 }
 
+function getColor(colorName: string) {
+  switch (colorName) {
+    case "mint":
+      return chalk.rgb(152, 255, 152);
+    case "orange":
+      return chalk.rgb(255, 165, 0);
+    case "lavender":
+      return chalk.rgb(230, 230, 250);
+    case "pink":
+      return chalk.rgb(255, 58, 183);
+    default:
+      return chalk.rgb(255, 58, 183);
+  }
+}
+
 export async function startTimer(
   seconds: number,
-  options: { task: string; quiet: boolean; showProgress: boolean },
+  options: {
+    task: string;
+    quiet: boolean;
+    showProgress: boolean;
+    color: string;
+  },
 ): Promise<boolean> {
   return new Promise((resolve) => {
     let remaining = seconds;
@@ -32,7 +52,7 @@ export async function startTimer(
       bar.start(seconds, 0);
     }
 
-    const pink = chalk.rgb(255, 58, 183);
+    const pink = getColor(options.color);
 
     const interval = setInterval(() => {
       if (isCancelled) return;
