@@ -38,7 +38,7 @@ focus --help                 # ayuda
 | focus --no-progress        | texto, sin barra                   |
 | focus --help               | ayuda                              |
 
-# Tecnologias
+# Tecnologías
 
 - TypeScript
 - Node.js
@@ -47,7 +47,7 @@ focus --help                 # ayuda
 - CLI progress
 - CLI nativo (sin dependencias externas)
 
-# License
+# Licencia
 
 **MIT**
 _Galilea Granados_

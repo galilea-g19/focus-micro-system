@@ -10,33 +10,33 @@
 
 5-minute focus companion for distracted developers - CLI tool with timer, progress bar and micro-interactions
 
-## Instalación
+## Installation
 
 ```bash
 npm install -g focus-micro-system
 ```
 
-### Uso
+### Use
 
 ```bash
-focus                        # 5 minutos, pregunta tarea
-focus --minutes 10           # 10 minutos
-focus --task "Revisar PRs"   # sin pregunta
-focus --quiet                # solo tiempo restante, sin mensajes
-focus --no-progress          # texto, sin barra
-focus --help                 # ayuda
+focus                        # 5 minutes, task prompt
+focus --minutes 10           # 10 minutes
+focus --task "Revisar PRs"   # no question
+focus --quiet                # only remainig time, no prompts
+focus --no-progress          # text, no progress bas
+focus --help                 # help
 ```
 
 ### Full commands
 
-| Command                    | What it does                       |
-| -------------------------- | ---------------------------------- |
-| Focus                      | 5 minutos, pregunta tarea          |
-| focus --minutes 10         | 10 minutos                         |
-| focus --task "Revisar PRs" | sin pregunta                       |
-| focus --quiet              | solo tiempo restante, sin mensajes |
-| focus --no-progress        | texto, sin barra                   |
-| focus --help               | ayuda                              |
+| Command                    | What it does                   |
+| -------------------------- | ------------------------------ |
+| Focus                      | 5 minutes, task prompt         |
+| focus --minutes 10         | 10 minutes                     |
+| focus --task "Revisar PRs" | no question                    |
+| focus --quiet              | only remainig time, no prompts |
+| focus --no-progress        | text, no progress bash         |
+| focus --help               | help                           |
 
 # Technologies
 
