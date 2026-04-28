@@ -8,7 +8,7 @@
 
 # focus-micro-system
 
-5-minute focus companion for distracted developers - CLI tool with timer, progress bar and micro-interactions
+5-minutos de compañero de enfoque para desarrolladores distraídos - Herramienta CLI con contador, barra de progreso y micro-interacciones
 
 ## Instalación
 
@@ -38,14 +38,14 @@ focus --help                 # ayuda
 | focus --no-progress        | texto, sin barra                   |
 | focus --help               | ayuda                              |
 
-# Technologies
+# Tecnologias
 
 - TypeScript
 - Node.js
 - Chalk
 - Commander
 - CLI progress
-- CLI nativo (without external dependencies)
+- CLI nativo (sin dependencias externas)
 
 # License
 
@@ -55,6 +55,4 @@ _Galilea Granados_
 - GitHub: @galilea-g19
 - LinkedIn: galileagranados
 
-> Made with ❤️ for developers who need focus before a challenging task
-
-> This README is also available in Spanish: [README.es.md](./README.es.md)
+> Hecho con ❤️ para desarrolladores quienes necesitan enfocarse antes de una tarea retadora
