@@ -1,10 +1,10 @@
 {
-  "name": "focus-micro-system",
+  "name": "@galilea-g19/focus-micro-system",
   "version": "1.0.1",
   "description": "5-minute focus companion for distracted developers - CLI tool with timer, progress bar and micro-interactions",
   "main": "index.js",
   "bin": {
-    "focus": "./dist/index.js"
+    "focus": "dist/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
