@@ -1,6 +1,6 @@
 {
   "name": "@galilea-g19/focus-micro-system",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "5-minute focus companion for distracted developers - CLI tool with timer, progress bar and micro-interactions",
   "main": "index.js",
   "bin": {
